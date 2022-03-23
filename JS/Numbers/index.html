@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href = "css/w3.css">
+    <link rel="stylesheet" href = "css/style.css">
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <div class="w3-container w3-card w3-margin w3-padding-16">
+    <pre>
+        Функция Капрекара
+Число 6174 имеет следующую особенность. Выберем любое четырёхзначное число n, больше 1000,
+в котором не все цифры одинаковы (всюду предполагается использование десятичной системы счисления,
+если не оговорено иное). Расположим цифры сначала в порядке возрастания, затем в порядке убывания.
+Вычтем из большего меньшее. Производя перестановки цифр и вычитания, нули следует сохранять.
+Описанное действие назовём функцией Капрекара K(n). Повторяя этот процесс с получающимися разностями,
+не более чем за семь шагов получим число 6174, которое будет затем воспроизводить само себя.
+
+Это свойство числа 6174 было открыто в 1949 году индийским математиком Д. Р. Капрекаром,
+в честь которого оно и получило своё название.
+
+Примеры
+Для числа 3412:
+
+4321 − 1234 = 3087 →
+8730 − 378 = 8352 →
+8532 − 2358 = 6174;
+Для числа 1100:
+
+1100 − 11 = 1089 →
+9810 − 189 = 9621 →
+9621 − 1269 = 8352 →
+8532 − 2358 = 6174.
+Для числа 7641:
+
+7641 − 1467 = 6174.
+    </pre>
+    </div>
+    <div id="container" class="w3-container w3-card w3-margin w3-padding-16">
+
+    </div>
+    <script>
+        //var n = prompt('Insert 3-chnoe number');
+        var n = 423;
+        oneStep(n);
+
+        function oneStep(n){
+            var s = String(n);
+            var arr = s.split("");
+            
+            for (var i=0; i<arr.length; i++)
+            arr[i]=parseInt(arr[i]);
+           
+
+           var arrAsc = [].concat(arr);
+           var arrDesc = [].concat(arr);
+            arrAsc.sort(function(a,b){return a-b});
+            arrDesc.sort(function(a,b){return b-a});
+ //console.log(arrDesc);
+            var first = (arrDesc[0]*100+arrDesc[1]*10+arrDesc[2]);
+            var second = (arrAsc[0]*100+arrAsc[1]*10+arrAsc[2])
+
+
+        }
+    </script>
+    
+</body>
+</html>
